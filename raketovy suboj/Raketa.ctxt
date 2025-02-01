@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Raketa
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Raketa\ here.\r\n\ \r\n\ @author\ Timotej\ Ru\u017Ei\u010Dka\r\n\ @version\ 1\r\n
+comment1.params=vpred\ vlavo\ vpravo\ vystrel
+comment1.target=Raketa(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Raketa\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=poziciaX\ poziciaY
+comment3.target=void\ presunSa(int,\ int)
+comment4.params=oKolko
+comment4.target=void\ pricitajSkore(int)
+comment5.params=oKolko
+comment5.target=void\ odcitajSkore(int)
+comment6.params=
+comment6.target=int\ getSkore()
+numComments=7

@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Strela
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Strela\ here.\r\n\ \r\n\ @author\ Timotej\ Ru\u017Ei\u010Dka\r\n\ @version\ 1\r\n
+comment1.params=raketka
+comment1.target=Strela(Raketa)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Strela\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=3
