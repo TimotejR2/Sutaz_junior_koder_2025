@@ -6,10 +6,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Raketa extends Actor
+public class Raketa extends Vesmirnalod
 {
-    private int skore;
-    
     private String vpred;
     private String vlavo;
     private String vpravo;
@@ -17,9 +15,8 @@ public class Raketa extends Actor
     
     public Raketa(String vpred, String vlavo, String vpravo, String vystrel)
     {
+        super(1000, 1); // Zmen na 10 naspet!!!!!!!!!!!!!!!!!!
         this.getImage().scale(100, 65);
-        
-        this.skore = 0;
         this.vpred = vpred;
         this.vlavo = vlavo;
         this.vpravo = vpravo;
@@ -33,10 +30,11 @@ public class Raketa extends Actor
     public void act()
     {
         // Add your action code here.
+        super.act();
         
         if (Greenfoot.isKeyDown(this.vpred))
         {
-            this.move(1);
+            this.move(this.speed); // Nastavenie speed podla zadania
         }
         
         if (Greenfoot.isKeyDown(this.vlavo))
@@ -53,32 +51,14 @@ public class Raketa extends Actor
         // String vystrel = "space";
         if (Greenfoot.isKeyDown(this.vystrel))
         {
-            Strela strela = new Strela(this);
-            World svet = this.getWorld();
-            svet.addObject(strela, this.getX(), this.getY());
-            strela.setRotation(this.getRotation());
-            strela.move(75);
+            this.vystrel();
         }
     }
-    
+
     public void presunSa(int poziciaX, int poziciaY)
     {
         this.setLocation(poziciaX, poziciaY);
     }
     
-    public void pricitajSkore(int oKolko)
-    {
-        this.skore += oKolko;
-        // this.skore = this.skore + oKolko;
-    }
-    
-    public void odcitajSkore(int oKolko)
-    {
-        this.skore -= oKolko;
-    }
-    
-    public int getSkore()
-    {
-        return this.skore;
-    }
+
 }
