@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Strela extends Actor
 {
-    private Vesmirnalod vlastnikStrely;
+    private VesmirnaLod vlastnikStrely;
     
-    public Strela(Vesmirnalod vesmirnalod)
+    public Strela(VesmirnaLod vesmirnaLod)
     {
-        this.vlastnikStrely = vesmirnalod;
+        this.vlastnikStrely = vesmirnaLod;
     }
     
     /**
@@ -31,7 +31,7 @@ public class Strela extends Actor
         }
         else 
         {
-            Vesmirnalod nepriatel = (Vesmirnalod)this.getOneIntersectingObject(Vesmirnalod.class);
+            VesmirnaLod nepriatel = (VesmirnaLod)this.getOneIntersectingObject(VesmirnaLod.class);
             
             if (nepriatel != null)
             {

@@ -1,10 +1,8 @@
 #BlueJ class context
-comment0.target=Vesmirnalod
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Vesmirnalod\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=initSkore\ initSpeed
-comment1.target=Vesmirnalod(int,\ int)
-comment10.params=
-comment10.target=boolean\ turboUsable()
+comment0.target=VesmirnaLod
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ VesmirnaLod\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=initSkore\ rychlost
+comment1.target=VesmirnaLod(int,\ int)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=oKolko
@@ -20,5 +18,5 @@ comment7.target=boolean\ mozeVystrelit()
 comment8.params=
 comment8.target=void\ checkSkore()
 comment9.params=
-comment9.target=void\ turbo()
-numComments=11
+comment9.target=void\ checkBoost()
+numComments=10

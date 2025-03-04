@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Raketa extends Vesmirnalod
+public class Raketa extends VesmirnaLod
 {
     private String vpred;
     private String vlavo;
@@ -15,8 +15,10 @@ public class Raketa extends Vesmirnalod
     
     public Raketa(String vpred, String vlavo, String vpravo, String vystrel)
     {
-        super(1000, 1); // Zmen na 10 naspet!!!!!!!!!!!!!!!!!!
+        super(100, 1);
+        
         this.getImage().scale(100, 65);
+        
         this.vpred = vpred;
         this.vlavo = vlavo;
         this.vpravo = vpravo;
@@ -29,12 +31,11 @@ public class Raketa extends Vesmirnalod
      */
     public void act()
     {
-        // Add your action code here.
         super.act();
         
         if (Greenfoot.isKeyDown(this.vpred))
         {
-            this.move(this.speed); // Nastavenie speed podla zadania
+            this.move(this.rychlost);
         }
         
         if (Greenfoot.isKeyDown(this.vlavo))
@@ -48,17 +49,16 @@ public class Raketa extends Vesmirnalod
         }
         
         // boolean, int, double, char, String
-        // String vystrel = "space";
+        //String vystrel = "space";
         if (Greenfoot.isKeyDown(this.vystrel))
         {
             this.vystrel();
         }
     }
-
+        
     public void presunSa(int poziciaX, int poziciaY)
     {
         this.setLocation(poziciaX, poziciaY);
-    }
-    
+    }    
 
 }

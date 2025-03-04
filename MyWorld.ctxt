@@ -11,5 +11,5 @@ comment3.target=void\ checkGameOver()
 comment4.params=
 comment4.target=void\ generujNepriatela()
 comment5.params=
-comment5.target=void\ generateTurbo()
+comment5.target=void\ generujTurboBoost()
 numComments=6

@@ -8,15 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TurboBoost extends Actor
 {
-    public TurboBoost(){
+    public TurboBoost()
+    {
         this.getImage().scale(50, 50);
     }
+    
+    /**
+     * Act - do whatever the TurboBoost wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
-        Vesmirnalod lod = (Vesmirnalod)this.getOneIntersectingObject(Vesmirnalod.class);
-        if (lod != null && lod.turboUsable() == true){
-            lod.turbo();
-            this.getWorld().removeObject(this);
-        }
+        // Add your action code here.
     }
 }
