@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Hviezda
+comment1.params=
+comment1.target=void\ act()
+comment2.params=lod
+comment2.target=void\ Koniec(VesmirnaLod)
+comment3.params=lod
+comment3.target=void\ effectLod(VesmirnaLod)
+numComments=4

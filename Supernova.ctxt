@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Supernova
+comment1.params=lod
+comment1.target=void\ Koniec(VesmirnaLod)
+comment2.params=lod
+comment2.target=void\ effectLod(VesmirnaLod)
+numComments=3

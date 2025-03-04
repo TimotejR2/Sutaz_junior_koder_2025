@@ -1,12 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 
-/**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MyWorld extends World
 {
     Raketa hrac1;
@@ -37,6 +31,10 @@ public class MyWorld extends World
         
         this.generujNepriatela();
         this.generujTurboBoost();
+        this.generujStit();
+        this.generujOpravu();
+        this.generujSupernovu();
+        this.generujCiernuDieru();
     }
     
     public void checkGameOver()
@@ -59,6 +57,30 @@ public class MyWorld extends World
     {
         if (Greenfoot.getRandomNumber(500) < 2) {
             this.addObject(new TurboBoost(), Greenfoot.getRandomNumber(800), Greenfoot.getRandomNumber(600));
+        }
+    }
+        public void generujStit()
+    {
+        if (Greenfoot.getRandomNumber(500) < 2) {
+            this.addObject(new Stit(), Greenfoot.getRandomNumber(800), Greenfoot.getRandomNumber(600));
+        }
+    }
+    public void generujOpravu()
+        {
+        if (Greenfoot.getRandomNumber(500) < 2) {
+            this.addObject(new Opravovna(), Greenfoot.getRandomNumber(800), Greenfoot.getRandomNumber(600));
+        }
+    }
+        public void generujSupernovu()
+        {
+        if (Greenfoot.getRandomNumber(500) < 1) {
+            this.addObject(new Supernova(), Greenfoot.getRandomNumber(800), Greenfoot.getRandomNumber(600));
+        }
+    }
+            public void generujCiernuDieru()
+        {
+        if (Greenfoot.getRandomNumber(500) < 1) {
+            this.addObject(new CiernaDiera(50), Greenfoot.getRandomNumber(800), Greenfoot.getRandomNumber(600));
         }
     }
 }

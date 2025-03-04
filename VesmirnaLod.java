@@ -1,24 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class VesmirnaLod here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class VesmirnaLod extends Actor
+abstract public class VesmirnaLod extends Actor
 {
     protected int skore;
     protected int casDoDobitia;
+    protected int stit;
     
     protected int rychlost;
     protected boolean aktivnyBoost;
     protected int casDoUplynutiaBoostu;
+    protected int speedmultimlier;
     
     public VesmirnaLod(int initSkore, int rychlost){
+        this.stit = 0;
         this.skore = initSkore;
         this.casDoDobitia = 0;
         this.rychlost = rychlost;
+        this.speedmultimlier = 1;
     }
     
     public void act()
@@ -38,7 +36,6 @@ public class VesmirnaLod extends Actor
             aktivnyBoost = false;
         }
         
-        this.checkBoost();
         this.checkSkore();
     }
     
@@ -50,10 +47,24 @@ public class VesmirnaLod extends Actor
     
     public void odcitajSkore(int oKolko)
     {
+        if (this.stit >= oKolko)
+        {
+            this.stit -= oKolko;
+            oKolko = 0;
+        }
+        else{
+            oKolko -= this.stit;
+            this.stit = 0;
+        }
         this.skore -= oKolko;
         // this.skore = this.skore - oKolko;
     }
-    
+    public void aktivujBoost()
+    {
+            this.rychlost *= 2;
+            this.aktivnyBoost = true;
+            this.casDoUplynutiaBoostu = 100;
+    }
     public int getSkore()
     {
         return this.skore;
@@ -85,17 +96,15 @@ public class VesmirnaLod extends Actor
             this.getWorld().removeObject(this);
         }
     }
-    
-    public void checkBoost()
+    public void aktivujStit()
     {
-        TurboBoost turboBoost = (TurboBoost) this.getOneIntersectingObject(TurboBoost.class);
-        
-        if (turboBoost != null)
-        {
-            this.rychlost *= 2;
-            this.aktivnyBoost = true;
-            this.casDoUplynutiaBoostu = 100;
-            this.getWorld().removeObject(turboBoost);
-        }
+        this.stit = 20;
     }
+    public void stop(){
+        this.speedmultimlier = 0;
+    }
+    public void go(){
+        this.speedmultimlier = 1;
+    }
+    abstract public void opravSa(int oKolko);
 }

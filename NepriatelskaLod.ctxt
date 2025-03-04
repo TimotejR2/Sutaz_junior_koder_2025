@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ pohybujSa()
 comment4.params=
 comment4.target=Raketa\ najdiNajblizsiehoHraca()
-numComments=5
+comment5.params=oKolko
+comment5.target=void\ opravSa(int)
+numComments=6

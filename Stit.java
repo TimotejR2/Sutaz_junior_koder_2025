@@ -1,10 +1,10 @@
 import greenfoot.*;
 
-public class TurboBoost extends Boost
+public class Stit extends Boost
 {
     @Override
     protected void aplikujSaNaLod(VesmirnaLod lod)
     {
-        lod.aktivujBoost();
+        lod.aktivujStit();
     }
 }
