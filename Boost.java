@@ -6,14 +6,17 @@ abstract public class Boost extends Actor
     {
         this.getImage().scale(50, 50);
     }
+
     public void act()
     {
         VesmirnaLod lod = (VesmirnaLod)this.getOneIntersectingObject(VesmirnaLod.class);
+        
         if (lod != null)
         {
             this.aplikujSaNaLod(lod);
             this.getWorld().removeObject(this);
         }
     }
-    protected abstract void aplikujSaNaLod(VesmirnaLod lod);
+    
+    abstract protected void aplikujSaNaLod(VesmirnaLod lod);
 }

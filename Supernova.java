@@ -1,16 +1,22 @@
 import greenfoot.*;
 
-public class Supernova extends Hviezda
+/**
+ * Image source: https://en.wikipedia.org/wiki/Supernova#/media/File:Keplers_supernova.jpg
+ */
+public class Supernova extends DocasnyObjekt
 {
-       @Override
-    protected void Koniec(VesmirnaLod lod){
-        if (lod != null){
-            lod.odcitajSkore(5);
-        }
-        
+    public Supernova(int hmotnost)
+    {
+        super(hmotnost);
     }
-    @Override
-    protected void effectLod(VesmirnaLod lod){
+    
+    protected void onAct(VesmirnaLod lod)
+    {
         lod.odcitajSkore(1);
+    }
+    
+    protected void onDeath(VesmirnaLod lod)
+    {
+        lod.odcitajSkore(5);
     }
 }

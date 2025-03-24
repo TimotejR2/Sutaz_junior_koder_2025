@@ -17,10 +17,11 @@ public class NepriatelskaLod extends VesmirnaLod
     {
         super(5, 2);
         this.getImage().scale(110, 75);
-        this.oprava = 0;
         
         this.pohybCooldown = 50;
         this.smerPohybu = Greenfoot.getRandomNumber(360);
+        
+        this.oprava = 0;
     }
     
     public void act()
@@ -28,15 +29,16 @@ public class NepriatelskaLod extends VesmirnaLod
         super.act();
         
         Raketa ciel = this.najdiNajblizsiehoHraca();
-        if (ciel != null)
-        {
+        if (ciel != null) {
             this.turnTowards(ciel.getX(), ciel.getY());
             this.vystrel();
         }
         
-        this.pohybujSa();
-        if (this.oprava > 0)
-        {
+        if (this.pohybAktivny) {
+            this.pohybujSa();
+        }
+        
+        if (this.oprava > 0) {
             this.pricitajSkore(1);
             this.oprava -= 1;
         }
@@ -49,7 +51,7 @@ public class NepriatelskaLod extends VesmirnaLod
             this.pohybCooldown = 50; // restart premennej pohybCooldown
         }
         this.setRotation(this.smerPohybu); // povieme lodi, ze sa ma natocit smerom smerPohybu
-        this.move(this.rychlost*this.speedmultimlier);
+        this.move(this.rychlost);
         this.pohybCooldown--; // this.pohybCooldown = this.pohybCooldown - 1;
     }
     
@@ -72,9 +74,9 @@ public class NepriatelskaLod extends VesmirnaLod
         }
         return najblizsiHrac;
     }
-    @Override
-   public void opravSa(int oKolko)
-   {
-       this.oprava = oKolko;
-   }
+    
+    public void opravSa(int oKolko)
+    {
+        this.oprava = oKolko;
+    }
 }

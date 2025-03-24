@@ -1,26 +1,36 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * Write a description of class VesmirnaLod here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 abstract public class VesmirnaLod extends Actor
 {
     protected int skore;
-    protected int casDoDobitia;
     protected int stit;
+    
+    protected int casDoDobitia;
     
     protected int rychlost;
     protected boolean aktivnyBoost;
     protected int casDoUplynutiaBoostu;
-    protected int speedmultimlier;
+    
+    protected boolean pohybAktivny;
     
     public VesmirnaLod(int initSkore, int rychlost){
-        this.stit = 0;
         this.skore = initSkore;
         this.casDoDobitia = 0;
         this.rychlost = rychlost;
-        this.speedmultimlier = 1;
+        this.stit = 0;
+        this.pohybAktivny = true;
     }
     
+    abstract public void opravSa(int oKolko);
+    
     public void act()
-    {             
+    {       
         if (this.casDoDobitia > 0)
         {
             this.casDoDobitia--;
@@ -38,6 +48,16 @@ abstract public class VesmirnaLod extends Actor
         
         this.checkSkore();
     }
+        
+    public void aktivujPohyb()
+    {
+        this.pohybAktivny = true;
+    }
+    
+    public void deaktivujPohyb()
+    {
+        this.pohybAktivny = false;
+    }
     
     public void pricitajSkore(int oKolko)
     {
@@ -47,24 +67,20 @@ abstract public class VesmirnaLod extends Actor
     
     public void odcitajSkore(int oKolko)
     {
-        if (this.stit >= oKolko)
-        {
+        if (this.stit >= oKolko) {
+            // stit pohlti vsetko
             this.stit -= oKolko;
             oKolko = 0;
-        }
-        else{
+        } else {
+            // stit pohlti len cast
             oKolko -= this.stit;
             this.stit = 0;
         }
+        
         this.skore -= oKolko;
         // this.skore = this.skore - oKolko;
     }
-    public void aktivujBoost()
-    {
-            this.rychlost *= 2;
-            this.aktivnyBoost = true;
-            this.casDoUplynutiaBoostu = 100;
-    }
+    
     public int getSkore()
     {
         return this.skore;
@@ -96,15 +112,16 @@ abstract public class VesmirnaLod extends Actor
             this.getWorld().removeObject(this);
         }
     }
+    
+    public void aktivujBoost()
+    {
+        this.rychlost *= 2;
+        this.aktivnyBoost = true;
+        this.casDoUplynutiaBoostu = 100;
+    }
+    
     public void aktivujStit()
     {
         this.stit = 20;
     }
-    public void stop(){
-        this.speedmultimlier = 0;
-    }
-    public void go(){
-        this.speedmultimlier = 1;
-    }
-    abstract public void opravSa(int oKolko);
 }

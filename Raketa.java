@@ -1,5 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+/**
+ * Write a description of class Raketa here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
 public class Raketa extends VesmirnaLod
 {
     private String vpred;
@@ -19,13 +25,22 @@ public class Raketa extends VesmirnaLod
         this.vystrel = vystrel;
     }
     
+    /**
+     * Act - do whatever the Raketa wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         super.act();
         
-        if (Greenfoot.isKeyDown(this.vpred))
+        if (!this.pohybAktivny)
         {
-            this.move(this.rychlost * this.speedmultimlier);
+            return;
+        }
+        
+        if (Greenfoot.isKeyDown(this.vpred))
+        {            
+            this.move(this.rychlost);
         }
         
         if (Greenfoot.isKeyDown(this.vlavo))
@@ -49,10 +64,10 @@ public class Raketa extends VesmirnaLod
     public void presunSa(int poziciaX, int poziciaY)
     {
         this.setLocation(poziciaX, poziciaY);
+    }    
+
+    public void opravSa(int oKolko)
+    {
+        this.pricitajSkore(oKolko);
     }
-    @Override
-   public void opravSa(int oKolko)
-   {
-       this.pricitajSkore(oKolko);
-   }
 }

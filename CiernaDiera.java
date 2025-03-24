@@ -1,25 +1,22 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.List;
-import java.util.ArrayList;
+import greenfoot.*;
 
-public class CiernaDiera extends Hviezda
+/**
+ * Image source: https://www.eso.org/public/images/eso2105a/
+ */
+public class CiernaDiera extends DocasnyObjekt
 {
-    private List<VesmirnaLod> disabled = new ArrayList<>();
-    public CiernaDiera(int hmotnost){
-        this.zivotnost = hmotnost;
+    public CiernaDiera(int hmotnost)
+    {
+        super(hmotnost);
     }
-    @Override
-    protected void Koniec(VesmirnaLod lod){
-        while (!disabled.isEmpty()){
-            lod = disabled.get(0);
-            disabled.remove(0);
-            lod.go();
-        }
-        
+    
+    protected void onAct(VesmirnaLod lod)
+    {
+        lod.deaktivujPohyb();        
     }
-    @Override
-    protected void effectLod(VesmirnaLod lod){
-        this.disabled.add(lod);
-        lod.stop();
+    
+    protected void onDeath(VesmirnaLod lod)
+    {
+        lod.aktivujPohyb();
     }
 }
